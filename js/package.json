@@ -1,0 +1,39 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "blog",
+  "main": "./src/app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lipengyu2006/lipengyu2006.github.io.git"
+  },
+  "scripts": {
+    "dev": "gulp watch",
+    "build": "gulp release"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babelify": "^8.0.0",
+    "browserify": "^14.5.0",
+    "browserify-derequire": "^0.9.4",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-cli": "^1.4.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.9.0"
+  },
+  "author": "lipengyu",
+  "license": "MIT",
+  "dependencies": {
+    "@cycle/dom": "^19.3.0",
+    "@cycle/isolate": "^3.2.0",
+    "@cycle/run": "^3.4.0",
+    "xstream": "^11.0.0"
+  }
+}
