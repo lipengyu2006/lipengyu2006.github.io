@@ -34,7 +34,9 @@
     "@cycle/dom": "^19.3.0",
     "@cycle/isolate": "^3.2.0",
     "@cycle/run": "^3.4.0",
+    "@cycle/time": "^0.10.1",
     "cycle-onionify": "^4.0.0",
+    "lodash": "^4.17.4",
     "xstream": "^11.0.0"
   }
 }
