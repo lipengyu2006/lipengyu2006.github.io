@@ -14,24 +14,31 @@
     <section class="section">
       <div class="container">
         <h1 class="title">Time record</h1>
-
+<!--
         <table class="table">
           <thead>
             <tr>
-              <th><abbr title="Position">Pos</abbr></th>
-              <th>Section</th>
+              <th colspan="6" class="-js-record-item-add">
+                <div class="control">
+                  <input class="input" type="text" placeholder="Page section">
+                </div>
+              </th>
+            </tr>
+            <tr>
+              <th><abbr title="Serial number">SN</abbr></th>
+              <th>Page part</th>
               <th>Start time</th>
               <th>End time</th>
               <th>Duration</th>
               <th>Operate</th>
-              <th>Content</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <th>1</th>
-              <td>
-                <div class="tags has-addons">
+              <td class="-js-editing">
+                <input class="input is-small -js-edit" type="text">
+                <div class="tags has-addons -js-view">
                   <span class="tag is-primary">254</span>
                   <span class="tag">①</span>
                 </div>
@@ -45,16 +52,14 @@
                   <a class="tag is-delete"></a>
                 </div>
               </td>
-              <td>
-                <input class="input is-small" type="text">
-              </td>
             </tr>
             <tr>
               <th>1</th>
               <td>
-                <div class="tags has-addons">
+                <input class="input is-small -js-edit" type="text">
+                <div class="tags has-addons -js-view">
                   <span class="tag">254</span>
-                  <span class="tag">①</span>
+                  <span class="tag">1</span>
                 </div>
               </td>
               <td>17:30:15</td>
@@ -65,9 +70,6 @@
                   <span class="tag is-light">done</span>
                   <a class="tag is-delete"></a>
                 </div>
-              </td>
-              <td>
-                <input class="input is-small" type="text">
               </td>
             </tr>
           </tbody>
@@ -96,7 +98,7 @@
             <a class="button is-primary">Start</a>
           </p>
         </div>
-
+-->
         <div id="timerecord"></div>
       </div>
     </section>

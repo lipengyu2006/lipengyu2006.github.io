@@ -1,3 +1,18 @@
-.input.is-small {
+table th.-js-record-item-add {
+  padding: .5em 0em;
+  border: none;
+}
+
+.-js-edit {
+  display: none;
+}
+
+.-js-editing .-js-view {
+  display: none;
+}
+
+.-js-editing .-js-edit {
   font-size: 0.70rem;
+  width: 66px;
+  display: block;
 }
