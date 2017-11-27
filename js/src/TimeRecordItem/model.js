@@ -38,7 +38,7 @@ function model(actions$) {
     .mapTo(prevState => {
       const time = new Date().getTime();
       const startTime = prevState.isStop ? prevState.startTime.concat(time) : prevState.startTime;
-      const endTime = prevState.isStop ? prevState.endTime : time;
+      const endTime = time;
 
       return {
         ...prevState,

@@ -30745,7 +30745,7 @@ function model(actions$) {
   }).mapTo(function (prevState) {
     var time = new Date().getTime();
     var startTime = prevState.isStop ? prevState.startTime.concat(time) : prevState.startTime;
-    var endTime = prevState.isStop ? prevState.endTime : time;
+    var endTime = time;
 
     return _extends({}, prevState, {
       isStop: false,
@@ -30814,13 +30814,31 @@ function view(sources) {
           }
         }
       }
-    }), (0, _dom.div)('.tags.has-addons.-js-view', [(0, _dom.span)('.tag.is-primary', '' + state.content[0]), (0, _dom.span)('.tag', '' + state.content[1])])]), (0, _dom.td)('' + getStartTime(state.startTime)), (0, _dom.td)('' + (0, _tool.getHMS)(state.endTime)), (0, _dom.td)('' + (0, _tool.getDur)(state.startTime, state.pauseTime)), (0, _dom.td)((0, _dom.div)('.tags.has-addons', [state.isStop ? (0, _dom.a)('.tag.is-light.-js-restart', 'Pause') : (0, _dom.a)('.tag.is-light.-js-stop', 'Running'), (0, _dom.a)('.tag.is-delete.-js-delete')])), (0, _dom.td)()]);
+    }), (0, _dom.div)('.tags.has-addons.-js-view', [(0, _dom.span)('.tag.is-primary', '' + state.content[0]), (0, _dom.span)('.tag', '' + state.content[1])])]), (0, _dom.td)(getStartTime(state.startTime)), (0, _dom.td)(getEndTime(state.pauseTime, state.startTime, state.endTime)),
+    //td(`${getHMS(state.endTime)}`),
+    (0, _dom.td)('' + (0, _tool.getDur)(state.startTime, state.pauseTime)), (0, _dom.td)((0, _dom.div)('.tags.has-addons', [state.isStop ? (0, _dom.a)('.tag.is-light.-js-restart', 'Pause') : (0, _dom.a)('.tag.is-light.-js-stop', 'Running'), (0, _dom.a)('.tag.is-delete.-js-delete')])), (0, _dom.td)()]);
   });
 }
 
 function getStartTime(arry) {
-  var elLast = (0, _lodash.last)(arry);
-  return (0, _tool.getHMS)(elLast);
+  var list = arry.slice();
+  list.reverse();
+  return list.map(function (v) {
+    return (0, _dom.p)('' + (0, _tool.getHMS)(v));
+  });
+}
+
+function getEndTime(pause, start, current) {
+  var isPause = pause.length === start.length;
+  var list = pause.slice();
+
+  if (!isPause) {
+    list.push(current);
+  }
+  list.reverse();
+  return list.map(function (v) {
+    return (0, _dom.p)('' + (0, _tool.getHMS)(v));
+  });
 }
 
 exports.default = view;

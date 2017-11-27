@@ -1,5 +1,5 @@
 import { last } from 'lodash';
-import { div, span, a, input } from '@cycle/dom';
+import { div, span, a, input, p } from '@cycle/dom';
 import { table, thead, tbody, th, tr, td } from '@cycle/dom';
 import { getHMS, getDur } from '../tool';
 
@@ -38,8 +38,9 @@ function view(sources) {
           span('.tag', `${state.content[1]}`)
         ])
       ]),
-      td(`${getStartTime(state.startTime)}`),
-      td(`${getHMS(state.endTime)}`),
+      td(getStartTime(state.startTime)),
+      td(getEndTime(state.pauseTime, state.startTime, state.endTime)),
+      //td(`${getHMS(state.endTime)}`),
       td(`${getDur(state.startTime, state.pauseTime)}`),
       td(div('.tags.has-addons', [
         state.isStop ? 
@@ -53,8 +54,20 @@ function view(sources) {
 }
 
 function getStartTime(arry) {
-  var elLast = last(arry);
-  return getHMS(elLast);
+  let list = arry.slice();
+  list.reverse();
+  return list.map(v => p(`${getHMS(v)}`));
+}
+
+function getEndTime(pause, start, current) {
+  const isPause = pause.length === start.length;
+  let list = pause.slice();
+
+  if (!isPause) {
+    list.push(current);
+  }
+  list.reverse();
+  return list.map(v => p(`${getHMS(v)}`));
 }
 
 export default view;
