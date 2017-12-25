@@ -30816,7 +30816,7 @@ function view(sources) {
       }
     }), (0, _dom.div)('.tags.has-addons.-js-view', [(0, _dom.span)('.tag.is-primary', '' + state.content[0]), (0, _dom.span)('.tag', '' + state.content[1])])]), (0, _dom.td)(getStartTime(state.startTime)), (0, _dom.td)(getEndTime(state.pauseTime, state.startTime, state.endTime)),
     //td(`${getHMS(state.endTime)}`),
-    (0, _dom.td)('' + (0, _tool.getDur)(state.startTime, state.pauseTime)), (0, _dom.td)((0, _dom.div)('.tags.has-addons', [state.isStop ? (0, _dom.a)('.tag.is-light.-js-restart', 'Pause') : (0, _dom.a)('.tag.is-light.-js-stop', 'Running'), (0, _dom.a)('.tag.is-delete.-js-delete')])), (0, _dom.td)()]);
+    (0, _dom.td)('' + (0, _tool.getDur)(state.startTime, state.pauseTime)), (0, _dom.td)((0, _dom.div)('.tags.has-addons', [state.isStop ? (0, _dom.a)('.tag.is-light.-js-restart', 'Pause') : (0, _dom.a)('.tag.is-light.-js-stop', 'Running'), (0, _dom.a)('.tag.is-delete.-js-delete')]))]);
   });
 }
 

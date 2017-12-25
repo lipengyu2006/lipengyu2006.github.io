@@ -47,8 +47,7 @@ function view(sources) {
           a('.tag.is-light.-js-restart', 'Pause') :
           a('.tag.is-light.-js-stop', 'Running'),
         a('.tag.is-delete.-js-delete'),
-      ])),
-      td()
+      ]))
     ])
   );
 }
